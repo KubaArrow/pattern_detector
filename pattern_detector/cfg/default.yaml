@@ -1,0 +1,103 @@
+# PatternDetectorROS Configuration
+
+# Frame id to reference the data
+frame_id: "scan_rear_link"
+
+# Frame id to returned pose
+end_frame_id: "odom"
+
+# Topic name from which LaserScan messages are received
+scan_topic_name: "/scanner_rear/scan"
+
+# Configuration for clusters
+cluster:
+  # Topic name for visualization markers of clusters
+  marker_topic_name: "/cluster_visualization_marker_array"
+
+  # Color for the visualization markers of clusters
+  marker_color:
+    r: 1  # red component
+    g: 0  # green component
+    b: 0  # blue component
+    a: 0.5  # alpha component
+
+  # Maximum distance between two samples for them to be considered as in the same neighborhood
+  eps: 0.18
+#0.121
+  # The number of samples in a neighborhood for a point to be considered as a core point
+  min_samples: 20
+#10
+
+# Configuration for subclusters
+subcluster:
+  # Topic name for visualization markers of subclusters
+  marker_topic_name: "/subcluster_visualization_marker_array"
+
+  # Color for the visualization markers of subclusters
+  marker_color:
+    r: 0  # red component
+    g: 0  # green component
+    b: 1  # blue component
+    a: 1  # alpha component
+
+  # Maximum distance between two samples for them to be considered as in the same neighborhood
+  eps: 0.06
+
+  # The number of samples in a neighborhood for a point to be considered as a core point
+  min_samples: 8
+
+
+# Configuration for valid clusters
+valid_clusters:
+  # Topic name for visualization markers of valid clusters
+  marker_topic_name: "/valid_clusters"
+
+  # Color for the visualization markers of valid clusters
+  marker_color:
+    r: 1  # red component
+    g: 1  # green component
+    b: 0  # blue component
+    a: 1  # alpha component
+
+
+# Configuration for parking pose
+parking_pose:
+  # Topic name for visualization markers of parking pose
+  marker_topic_name: "/parking_goal"
+
+# Time to live for the markers
+marker_timelife: 0.5
+
+# Maximum distance for points from the sensor
+max_point_distance: 8
+
+# Angle limits for scanning
+scan_angle:
+  min: -0.785  # minimum angle
+  max: 0.785  # maximum angle
+
+
+# Configuration for simple pattern detection
+simple_pattern:
+  # Width of the pattern 0.8
+  pattern_width: 0.95
+
+  # Offset for the pattern 0.05
+  pattern_offset: 0.05
+
+  # Number of subclusters required for pattern detection
+  required_subclusters: 3
+
+# Maximum distance from the centroid for a cluster to be considered valid
+distance_from_centroid: 0.3
+
+# Configuration for pose buffering
+pose_buffer:
+  # Maximum number of samples in the buffer
+  max_samples: 17
+
+  # Threshold to confirm the pose
+  confirm_threshold: 16
+
+  # Distance threshold for pose buffering
+  distance_threshold: 0.03

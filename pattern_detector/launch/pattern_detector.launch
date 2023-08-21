@@ -1,0 +1,12 @@
+<launch>
+
+  <!-- Load parameters from YAML file -->
+  <rosparam file="$(find pattern_detector)/cfg/default.yaml" command="load" ns="/pattern_detector" />
+
+  <!-- Start pattern detector node -->
+  <node name="pattern_detector" pkg="pattern_detector" type="PatternDetector.py" output="screen" />
+
+  <!-- Launch RViz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find pattern_detector)/rviz/default.rviz" />
+
+</launch>

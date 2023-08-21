@@ -1,0 +1,9 @@
+# Goal
+bool activate
+---
+# Result
+geometry_msgs/Pose pose
+---
+# Feedback
+string status
+
