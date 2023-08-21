@@ -4,6 +4,7 @@
 frame_id: "scan_rear_link"
 
 # Frame id to returned pose
+convert_to_end_frame_id: false
 end_frame_id: "odom"
 
 # Topic name from which LaserScan messages are received

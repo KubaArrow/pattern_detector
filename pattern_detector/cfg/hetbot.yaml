@@ -1,14 +1,14 @@
 # PatternDetectorROS Configuration
 
 # Frame id to reference the data
-frame_id: "scan_rear_link"
+frame_id: "base_scan"
 
 # Frame id to returned pose
 convert_to_end_frame_id: false
 end_frame_id: "odom"
 
 # Topic name from which LaserScan messages are received
-scan_topic_name: "/scanner_rear/scan"
+scan_topic_name: "/scan_raw/scan"
 
 # Configuration for clusters
 cluster:
@@ -74,14 +74,16 @@ max_point_distance: 8
 
 # Angle limits for scanning
 scan_angle:
-  min: -0.785  # minimum angle
-  max: 0.785  # maximum angle
+  #min: -0.785  # minimum angle
+  #max: 0.785  # maximum angle
+  min: -3.14  # minimum angle
+  max: 3.14  # maximum angle
 
 
 # Configuration for simple pattern detection
 simple_pattern:
   # Width of the pattern 0.8
-  pattern_width: 0.95
+  pattern_width: 0.57
 
   # Offset for the pattern 0.05
   pattern_offset: 0.05
